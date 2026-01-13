@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-export const useTaskStore = create(() => ({
+export const useTaskStore = create((set) => ({
   tasks: [
     {
       name: "Task 1",
@@ -18,5 +18,6 @@ export const useTaskStore = create(() => ({
       category: "personal",
       status: "not completed"
     }
-  ]
+  ],
+  addTask: (task) => set(state => ({ tasks: [...state.tasks, task] }))
 }))

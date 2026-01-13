@@ -1,12 +1,32 @@
+import { useTaskStore } from "../stores/taskStore";
+
 export const TaskForm = ({ ref }) => {
+
+  const { addTask } = useTaskStore();
 
   const closeForm = () => {
     ref.current?.close();
   }
 
+  const addNewTask = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+
+    const newTask = {
+      name: formData.get("name") || "",
+      description: formData.get("description") || "This is the first task.",
+      createdAt: "2025-12-26",
+      deadline: formData.get("deadline") || "",
+      category: formData.get("deadline") || "",
+      status: "not completed"  
+    };
+    addTask(newTask);
+    closeForm();
+  }
+
   return(
     <dialog ref={ref}>
-      <form>
+      <form onSubmit={addNewTask}>
         <h2>Add a new task</h2>
         <label>Task name
           <input type="text" name="name" required />
