@@ -1,5 +1,5 @@
-export const AddTaskBtn = () => {
+export const AddTaskBtn = ({ onClick }) => {
   return(
-    <button>Add new task</button>
+    <button onClick={onClick}>Add new task</button>
   );
 }
