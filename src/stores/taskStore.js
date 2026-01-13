@@ -8,7 +8,7 @@ export const useTaskStore = create((set) => ({
       description: "This is the first task.",
       createdAt: "2025-12-26",
       deadline: "2026-01-26",
-      category: "work",
+      category: "Work",
       completed: true
     },
     {
@@ -17,7 +17,7 @@ export const useTaskStore = create((set) => ({
       description: "This is the second task.",
       createdAt: "2025-01-11",
       deadline: "2026-01-31",
-      category: "personal",
+      category: "Personal",
       completed: false
     }
   ],
