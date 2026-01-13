@@ -10,10 +10,10 @@ export const Task = ({ task }) => {
   return(
     <div>
       <h3>{task.name}</h3>
-      <p>{task.description}</p>
+      {task.description && <p>{task.description}</p>}
       <p>{completed ? "Completed" : "Not completed"}</p>
       <p>Category: {task.category}</p>
-      <p>Deadline: {task.deadline}</p>
+      {task.deadline && <p>Deadline: {task.deadline}</p>}
       <TaskStatusBtn onClick={() => updateStatus(task.id, task.completed)}/>
     </div>
   );

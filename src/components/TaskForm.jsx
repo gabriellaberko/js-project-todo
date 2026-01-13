@@ -15,11 +15,11 @@ export const TaskForm = ({ ref }) => {
 
     const newTask = {
       id: crypto.randomUUID(),
-      name: formData.get("name") || "",
-      description: formData.get("description") || "This is the first task.",
+      name: formData.get("name"),
+      description: formData.get("description"),
       createdAt: dayjs().format("YYYY-MM-DD"),
-      deadline: formData.get("deadline") || "",
-      category: formData.get("category") || "",
+      deadline: formData.get("deadline"),
+      category: formData.get("category"),
       completed: false  
     };
     addTask(newTask);
