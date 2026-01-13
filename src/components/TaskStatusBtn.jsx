@@ -1,5 +1,5 @@
-export const TaskStatusBtn = () => {
+export const TaskStatusBtn = ({ onClick }) => {
   return(
-    <button></button>
+    <button onClick={onClick}></button>
   );
 }

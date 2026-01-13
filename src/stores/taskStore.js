@@ -9,7 +9,7 @@ export const useTaskStore = create((set) => ({
       createdAt: "2025-12-26",
       deadline: "2026-01-26",
       category: "work",
-      status: "completed"
+      completed: true
     },
     {
       name: "Task 2",
@@ -18,8 +18,15 @@ export const useTaskStore = create((set) => ({
       createdAt: "2025-01-11",
       deadline: "2026-01-31",
       category: "personal",
-      status: "not completed"
+      completed: false
     }
   ],
-  addTask: (task) => set(state => ({ tasks: [...state.tasks, task] }))
+  addTask: (task) => set(state => ({ tasks: [...state.tasks, task] })),
+  updateCompletionStatus: (id ) => set(state => ({ 
+    tasks: state.tasks.map((task) => 
+      id === task.id
+      ? {...task, completed: !task.completed} //update only the status value for the task which id matched the id sent as parameter
+      : task
+    )
+   }))
 }))

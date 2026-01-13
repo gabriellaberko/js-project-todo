@@ -1,11 +1,20 @@
 import { TaskStatusBtn } from "./TaskStatusBtn";
+import { useTaskStore } from "../stores/taskStore";
 
-export const Task = ({ name, description }) => {
+export const Task = ({ task }) => {
+  
+  const updateStatus = useTaskStore(state => state.updateCompletionStatus);
+  const id = task.id;
+  const completed = useTaskStore(state => state.tasks.find(task => task.id === id)?.completed);
+  
   return(
     <div>
-      <h3>{name}</h3>
-      <p>{description}</p>
-      <TaskStatusBtn />
+      <h3>{task.name}</h3>
+      <p>{task.description}</p>
+      <p>{completed ? "Completed" : "Not completed"}</p>
+      <p>Category: {task.category}</p>
+      <p>Deadline: {task.deadline}</p>
+      <TaskStatusBtn onClick={() => updateStatus(task.id, task.completed)}/>
     </div>
   );
 }

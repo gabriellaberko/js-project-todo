@@ -19,8 +19,8 @@ export const TaskForm = ({ ref }) => {
       description: formData.get("description") || "This is the first task.",
       createdAt: dayjs().format("YYYY-MM-DD"),
       deadline: formData.get("deadline") || "",
-      category: formData.get("deadline") || "",
-      status: "not completed"  
+      category: formData.get("category") || "",
+      completed: false  
     };
     addTask(newTask);
     closeForm();
