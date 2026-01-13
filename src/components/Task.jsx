@@ -5,15 +5,14 @@ import styled from "styled-components";
 export const Task = ({ task }) => {
   
   const updateStatus = useTaskStore(state => state.updateCompletionStatus);
-  const id = task.id;
-  const completed = useTaskStore(state => state.tasks.find(task => task.id === id)?.completed);
+  // const id = task.id;
+  // const completed = useTaskStore(state => state.tasks.find(task => task.id === id)?.completed);
   
   return(
     <StyledDiv>
       <div>
         <h3>{task.name}</h3>
         {task.description && <p>{task.description}</p>}
-        <p>{completed ? "Completed" : "Not completed"}</p>
         <p>Category: {task.category}</p>
         {task.deadline && <p>Deadline: {task.deadline}</p>}
       </div>
