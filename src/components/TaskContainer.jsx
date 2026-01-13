@@ -2,7 +2,7 @@ import { useTaskStore } from "../stores/taskStore";
 import { Task } from "./Task";
 
 export const TaskContainer = () => {
-  const { tasks } = useTaskStore();
+  const tasks = useTaskStore(state => state.tasks);
   
   return(
     <div>

@@ -1,4 +1,5 @@
 import { useTaskStore } from "../stores/taskStore";
+import dayjs from "dayjs";
 
 export const TaskForm = ({ ref }) => {
 
@@ -13,9 +14,10 @@ export const TaskForm = ({ ref }) => {
     const formData = new FormData(e.target);
 
     const newTask = {
+      id: crypto.randomUUID(),
       name: formData.get("name") || "",
       description: formData.get("description") || "This is the first task.",
-      createdAt: "2025-12-26",
+      createdAt: dayjs().format("YYYY-MM-DD"),
       deadline: formData.get("deadline") || "",
       category: formData.get("deadline") || "",
       status: "not completed"  
