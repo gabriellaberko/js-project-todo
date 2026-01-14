@@ -6,7 +6,7 @@ export const theme = {
     main: {
       bg: "#FFFFFF",
       primaryText: "#333333",
-      secondaryText: "#777777",
+      secondaryText: "#6f6f6fff",
       titleText: "#52C5FF"
     },
     button: {

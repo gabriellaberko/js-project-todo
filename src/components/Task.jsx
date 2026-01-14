@@ -15,7 +15,7 @@ export const Task = ({ task }) => {
            <RemoveTaskBtn onClick={() => removeTask(task.id)} />
         <StyledInnerWrapper>
           <div>
-            <h4>{task.name}</h4>
+            <h3>{task.name}</h3>
             {task.description && <p>{task.description}</p>}
             {task.deadline && <p><i>Deadline: {task.deadline}</i></p>}
             {task.category && <TaskCategory>{task.category}</TaskCategory>
