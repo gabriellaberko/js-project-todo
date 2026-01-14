@@ -15,9 +15,12 @@ export const TaskOverviewPage = () => {
   return (
     <StyledWrapper>
       <StyledMain>
+        <StyledHeading>
+          <StyledLogo src="./logo.png" alt="planet logotype"/>
           <h1>Planiture</h1>
-          <TaskContainer />
-          <TaskForm ref={dialogRef} />
+        </StyledHeading>
+        <TaskContainer />
+        <TaskForm ref={dialogRef} />
       </StyledMain>
       <StyledFooter>
         <AddTaskBtn onClick={openForm}/>
@@ -43,5 +46,16 @@ const StyledMain = styled.main`
 const StyledFooter = styled.footer`
   display: flex;
   flex-direction: column;
+  align-items: center;
+`;
+
+const StyledLogo = styled.img`
+  height: 28px;
+  width: auto;
+`;
+
+const StyledHeading = styled.div`
+  display: flex;
+  gap: 12px;
   align-items: center;
 `;
