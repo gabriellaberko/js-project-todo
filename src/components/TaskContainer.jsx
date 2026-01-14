@@ -13,7 +13,7 @@ export const TaskContainer = () => {
     <StyledDiv>
       {(!tasks || tasks.length < 1) && <EmptyTasksMessage />}
 
-      {tasks && tasks.length > 0 && <h2>Tasks</h2>}
+      {tasks && tasks.length > 0 && <h2>To-do list</h2>}
       {tasks && tasks.length > 0 && incompletedTasks.length < 1 && <EmptyIncompleteTasksMessage />}
       {tasks && incompletedTasks.map(task => (<Task key={task.id} task={task} />))}
       {completedTasks && completedTasks.length > 0 && <h3>Completed tasks</h3>}

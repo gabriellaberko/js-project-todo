@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import confetti from "../assets/confetti-gray.png";
 import moon from "../assets/man-on-the-moon.png";
 import rocket from "../assets/rocket.gif";
 
@@ -16,9 +15,8 @@ export const EmptyTasksMessage = () => {
 export const EmptyIncompleteTasksMessage = () => {
   return(
     <StyledWrapper>
-      <p><b>Hurray, there's nothing left to do!</b><br></br>All tasks are completed.</p>
       <StyledImg src={moon} alt="confetti"/>
-
+      <p><b>Hurray, there's nothing left to do!</b><br></br>All tasks are completed.</p>
     </StyledWrapper>
   );
 }

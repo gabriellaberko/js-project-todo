@@ -2,26 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware"; //to save tasks in localStorage
 
 export const useTaskStore = create(persist((set) => ({
-  tasks: [
-    {
-      name: "Task 1",
-      id: "1223445gdk",
-      description: "This is the first task.",
-      createdAt: "2025-12-26",
-      deadline: "2026-01-26",
-      category: "Work",
-      completed: true
-    },
-    {
-      name: "Task 2",
-      id: "1737294g4j",
-      description: "This is the second task.",
-      createdAt: "2025-01-11",
-      deadline: "2026-01-31",
-      category: "Personal",
-      completed: false
-    }
-  ],
+  tasks: [],
   addTask: (task) => set(state => ({ tasks: [...state.tasks, task] })),
   removeTask: (id ) => set(state => ({ tasks: state.tasks.filter(task => id !== task.id)
   })),
