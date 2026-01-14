@@ -1,25 +1,29 @@
 import { TaskStatusBtn } from "./buttons/TaskStatusBtn";
 import { RemoveTaskBtn } from "./buttons/RemoveTaskBtn";
 import { useTaskStore } from "../stores/taskStore";
+import { TaskCategory } from "./TaskCategory";
 import styled from "styled-components";
 
 export const Task = ({ task }) => {
   
   const updateCompletionStatus = useTaskStore(state => state.updateCompletionStatus);
   const removeTask = useTaskStore(state => state.removeTask);
-  // const id = task.id;
-  // const completed = useTaskStore(state => state.tasks.find(task => task.id === id)?.completed);
   
   return(
     <StyledDiv>
-      <div>
-        <h4>{task.name}</h4>
-        {task.description && <p>{task.description}</p>}
-        <p>Category: {task.category}</p>
-        {task.deadline && <p>Deadline: {task.deadline}</p>}
+      <StyledOuterWrapper>
         <RemoveTaskBtn onClick={() => removeTask(task.id)} />
-      </div>
-      <TaskStatusBtn onClick={() => updateCompletionStatus(task.id, task.completed)} completed={task.completed}/>
+        <StyledInnerWrapper>
+          <div>
+            <h4>{task.name}</h4>
+            {task.description && <p>{task.description}</p>}
+            {task.deadline && <p><i>Deadline: {task.deadline}</i></p>}
+            {task.category && <TaskCategory>{task.category}</TaskCategory>
+            }
+          </div>
+          <TaskStatusBtn onClick={() => updateCompletionStatus(task.id, task.completed)} completed={task.completed}/>
+        </StyledInnerWrapper>
+      </StyledOuterWrapper>
     </StyledDiv>
   );
 }
@@ -32,4 +36,16 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+`;
+
+const StyledOuterWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+const StyledInnerWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `;
