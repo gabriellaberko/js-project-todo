@@ -14,11 +14,11 @@ export const TaskOverviewPage = () => {
 
   return (
     <StyledWrapper>
+      <StyledHeader>
+        <StyledLogo src="./logo.png" alt="planet logotype"/>
+        <h1>Planiture</h1>
+      </StyledHeader>
       <StyledMain>
-        <StyledHeading>
-          <StyledLogo src="./logo.png" alt="planet logotype"/>
-          <h1>Planiture</h1>
-        </StyledHeading>
         <TaskContainer />
         <TaskForm ref={dialogRef} />
       </StyledMain>
@@ -54,8 +54,9 @@ const StyledLogo = styled.img`
   width: auto;
 `;
 
-const StyledHeading = styled.div`
+const StyledHeader = styled.header`
   display: flex;
   gap: 12px;
   align-items: center;
+  justify-content: center;
 `;
