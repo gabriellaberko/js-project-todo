@@ -1,6 +1,6 @@
 import { TaskContainer } from "../components/TaskContainer";
 import { TaskForm } from "../components/TaskForm";
-import { AddTaskBtn } from "../components/AddTaskBtn";
+import { AddTaskBtn } from "../components/buttons/AddTaskBtn";
 import { useRef } from "react";
 import styled from "styled-components";
 

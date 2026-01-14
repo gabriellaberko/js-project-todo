@@ -1,10 +1,12 @@
-import { TaskStatusBtn } from "./TaskStatusBtn";
+import { TaskStatusBtn } from "./buttons/TaskStatusBtn";
+import { RemoveTaskBtn } from "./buttons/RemoveTaskBtn";
 import { useTaskStore } from "../stores/taskStore";
 import styled from "styled-components";
 
 export const Task = ({ task }) => {
   
-  const updateStatus = useTaskStore(state => state.updateCompletionStatus);
+  const updateCompletionStatus = useTaskStore(state => state.updateCompletionStatus);
+  const removeTask = useTaskStore(state => state.removeTask);
   // const id = task.id;
   // const completed = useTaskStore(state => state.tasks.find(task => task.id === id)?.completed);
   
@@ -15,8 +17,9 @@ export const Task = ({ task }) => {
         {task.description && <p>{task.description}</p>}
         <p>Category: {task.category}</p>
         {task.deadline && <p>Deadline: {task.deadline}</p>}
+        <RemoveTaskBtn onClick={() => removeTask(task.id)} />
       </div>
-      <TaskStatusBtn onClick={() => updateStatus(task.id, task.completed)} completed={task.completed}/>
+      <TaskStatusBtn onClick={() => updateCompletionStatus(task.id, task.completed)} completed={task.completed}/>
     </StyledDiv>
   );
 }
