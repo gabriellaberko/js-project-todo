@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const TaskStatusBtn = ({ onClick, completed }) => {
+  const btnTitle = completed ? "Unmark completed" : "Mark completed" 
   return(
-    <StyledBtn onClick={onClick} completed={completed}></StyledBtn>
+    <StyledBtn title={btnTitle} onClick={onClick} completed={completed}></StyledBtn>
   );
 }
 
@@ -27,6 +28,7 @@ const StyledBtn = styled.button`
       : props => props.theme.colors.button.hoverBg
     )};
     box-shadow: 0px 3px 3px ${props => props.theme.colors.button.hoverBg};
+    cursor: pointer;
    }
 
   // Add checkmark, only visible when the prop 'completed' is true

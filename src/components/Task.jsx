@@ -12,7 +12,7 @@ export const Task = ({ task }) => {
   return(
     <StyledDiv>
       <StyledOuterWrapper>
-        <RemoveTaskBtn onClick={() => removeTask(task.id)} />
+           <RemoveTaskBtn onClick={() => removeTask(task.id)} />
         <StyledInnerWrapper>
           <div>
             <h4>{task.name}</h4>
@@ -45,6 +45,12 @@ const StyledOuterWrapper = styled.div`
 `;
 
 const StyledInnerWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;
+
+const StyledTaskHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;

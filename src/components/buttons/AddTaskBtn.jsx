@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const AddTaskBtn = ({ onClick }) => {
   return(
-    <StyledBtn onClick={onClick}></StyledBtn>
+    <StyledBtn title="Add new task" onClick={onClick}></StyledBtn>
   );
 }
 
@@ -14,10 +14,12 @@ const StyledBtn = styled.button`
   position: relative;
   color: #fff;
   border: none;
+  margin: 12px;
 
    &:hover {
     background-color: ${props => props.theme.colors.button.activeHoverBg};
     box-shadow: 0px 3px 3px ${props => props.theme.colors.button.hoverBg};
+    cursor: pointer;
    }
 
   &::before, &::after {

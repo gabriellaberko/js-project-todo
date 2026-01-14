@@ -13,7 +13,7 @@ export const TaskCategory = ({ children }) => {
 const StyledWrapper = styled.div`
   display: flex;
   align-items: center;
-  color: ${props => props.theme.colors.main.secondaryText}
+  color: ${props => props.theme.colors.main.secondaryText};
 `;
 const StyledIcon = styled.img`
   width: auto;
