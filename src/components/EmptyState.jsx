@@ -37,5 +37,5 @@ const StyledWrapper = styled.div`
   align-items: center;
   text-align: center;
   color: ${props => props.theme.colors.main.secondaryText};
-  margin-bottom: 32px;
+  margin: 42px;
 `;

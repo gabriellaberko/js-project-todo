@@ -14,7 +14,8 @@ const StyledBtn = styled.button`
   position: relative;
   color: #fff;
   border: none;
-  margin: 12px;
+  margin-top: 24px;
+  margin-bottom: 12px;
 
    &:hover {
     background-color: ${props => props.theme.colors.button.activeHoverBg};

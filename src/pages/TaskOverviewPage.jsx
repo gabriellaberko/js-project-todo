@@ -1,11 +1,15 @@
 import { TaskContainer } from "../components/TaskContainer";
 import { TaskForm } from "../components/TaskForm";
 import { AddTaskBtn } from "../components/buttons/AddTaskBtn";
+import { useTaskStore } from "../stores/taskStore";
 import { useRef } from "react";
+import { TaskSummary } from "../components/TaskSummary";
 import styled from "styled-components";
 
 export const TaskOverviewPage = () => {
   
+  const tasks = useTaskStore(state => state.tasks);
+
   const dialogRef = useRef(null);
 
   const openForm = () => {
@@ -15,16 +19,19 @@ export const TaskOverviewPage = () => {
   return (
     <StyledWrapper>
       <StyledHeader>
-        <StyledLogo src="./logo.png" alt="planet logotype"/>
+        <StyledLogo src="./logo-white.png" alt="planet logotype"/>
         <h1>Planiture</h1>
       </StyledHeader>
       <StyledMain>
-        <TaskContainer />
+        {(tasks && tasks.length > 0) && <TaskSummary />}
+        <TaskContainer openForm={openForm} />
         <TaskForm ref={dialogRef} />
       </StyledMain>
-      <StyledFooter>
-        <AddTaskBtn onClick={openForm}/>
-      </StyledFooter>
+      {(!tasks || tasks.length < 1) &&
+        <StyledFooter>
+          <AddTaskBtn onClick={openForm}/>
+        </StyledFooter>
+      }
     </StyledWrapper>
   )
 }
@@ -32,7 +39,6 @@ export const TaskOverviewPage = () => {
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   height: 100vh;
 `;
 
@@ -59,4 +65,7 @@ const StyledHeader = styled.header`
   gap: 12px;
   align-items: center;
   justify-content: center;
+  background-color: ${props => props.theme.colors.main.ascent};
+  color: ${props => props.theme.colors.main.title};
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
 `;

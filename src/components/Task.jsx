@@ -30,12 +30,12 @@ export const Task = ({ task }) => {
 
 const StyledDiv = styled.div`
   width: 100%;
-  margin: 0 16px;
   padding: 12px 24px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  min-width: 40vw;
 `;
 
 const StyledOuterWrapper = styled.div`

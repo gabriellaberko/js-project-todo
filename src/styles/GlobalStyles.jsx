@@ -8,6 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     color: ${(props) => props.theme.colors.main.primaryText};
     box-sizing: border-box;
     margin: 0;
+    margin-bottom: 12px;
   }
 
 `;
