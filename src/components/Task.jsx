@@ -13,7 +13,7 @@ export const Task = ({ task }) => {
   return(
     <StyledDiv>
       <div>
-        <h3>{task.name}</h3>
+        <h4>{task.name}</h4>
         {task.description && <p>{task.description}</p>}
         <p>Category: {task.category}</p>
         {task.deadline && <p>Deadline: {task.deadline}</p>}
