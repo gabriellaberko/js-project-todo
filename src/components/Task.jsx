@@ -19,7 +19,7 @@ export const Task = ({ task }) => {
           <div>
             <h3>{task.name}</h3>
             {task.description && <p>{task.description}</p>}
-            {task.deadline && <TaskDeadline deadline={task.deadline}>{task.deadline}</TaskDeadline>}
+            {task.deadline && task.completed === false && <TaskDeadline deadline={task.deadline}>{task.deadline}</TaskDeadline>}
             {task.category && <TaskCategory>{task.category}</TaskCategory>}
           </div>
           <TaskStatusBtn onClick={() => updateCompletionStatus(task.id, task.completed)} completed={task.completed}/>
