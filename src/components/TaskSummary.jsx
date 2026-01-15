@@ -49,13 +49,6 @@ const StyledInnerWrapper = styled.div`
   display:flex;
   flex-direction: column;
   gap: 24px;
-
-  /* @media ${(props) => props.theme.media.tablet}  {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 80vw;
-  } */
 `;
 
 const StatsWrapper = styled.div`
@@ -84,12 +77,6 @@ const StatsRow = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   margin-bottom: 24px;
-
-  /* @media ${(props) => props.theme.media.tablet}  {
-    display: flex;
-    flex-direction: column;
-    gap: 42px;
-  } */
 `;
 
 const ChartTitle = styled.p`

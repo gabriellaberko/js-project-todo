@@ -2,11 +2,13 @@ import { TaskStatusBtn } from "./buttons/TaskStatusBtn";
 import { RemoveTaskBtn } from "./buttons/RemoveTaskBtn";
 import { useTaskStore } from "../stores/taskStore";
 import { TaskCategory } from "./TaskCategory";
+import { TaskDeadline } from "./TaskDeadline";
 import styled from "styled-components";
 
 export const Task = ({ task }) => {
   
   const updateCompletionStatus = useTaskStore(state => state.updateCompletionStatus);
+
   const removeTask = useTaskStore(state => state.removeTask);
   
   return(
@@ -17,9 +19,8 @@ export const Task = ({ task }) => {
           <div>
             <h3>{task.name}</h3>
             {task.description && <p>{task.description}</p>}
-            {task.deadline && <p><i>Deadline: {task.deadline}</i></p>}
-            {task.category && <TaskCategory>{task.category}</TaskCategory>
-            }
+            {task.deadline && <TaskDeadline deadline={task.deadline}>{task.deadline}</TaskDeadline>}
+            {task.category && <TaskCategory>{task.category}</TaskCategory>}
           </div>
           <TaskStatusBtn onClick={() => updateCompletionStatus(task.id, task.completed)} completed={task.completed}/>
         </StyledInnerWrapper>
@@ -52,8 +53,6 @@ const StyledInnerWrapper = styled.div`
   gap: 12px;
 `;
 
-const StyledTaskHeader = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+const StyledParagraph = styled.p`
+  color: ${props => props.$IsOverDue ? "red" : "grey"};
 `;
