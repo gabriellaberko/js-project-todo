@@ -49,6 +49,7 @@ const StyledInnerWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
 `;
 
 const StyledTaskHeader = styled.div`

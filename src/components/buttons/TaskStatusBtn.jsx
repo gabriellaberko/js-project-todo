@@ -21,6 +21,7 @@ const StyledBtn = styled.button`
   )};
   position: relative;
   color: #fff;
+  flex-shrink: 0;
 
    &:hover {
     background-color: ${props => (props.completed 

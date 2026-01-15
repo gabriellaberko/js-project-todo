@@ -50,12 +50,12 @@ const StyledInnerWrapper = styled.div`
   flex-direction: column;
   gap: 24px;
 
-  @media ${(props) => props.theme.media.tablet}  {
+  /* @media ${(props) => props.theme.media.tablet}  {
     flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     width: 80vw;
-  }
+  } */
 `;
 
 const StatsWrapper = styled.div`
@@ -85,11 +85,11 @@ const StatsRow = styled.div`
   gap: 16px;
   margin-bottom: 24px;
 
-  @media ${(props) => props.theme.media.tablet}  {
+  /* @media ${(props) => props.theme.media.tablet}  {
     display: flex;
     flex-direction: column;
     gap: 42px;
-  }
+  } */
 `;
 
 const ChartTitle = styled.p`

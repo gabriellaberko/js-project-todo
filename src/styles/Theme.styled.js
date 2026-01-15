@@ -12,10 +12,12 @@ export const theme = {
     },
     button: {
       bg: "#F0F0F0",
+      text: "#FFFFFF",
       activeBg: "#52C5FF",
       hoverBg: "#D9D9D9",
       activeHoverBg: "#45B0FF",
-      shadow: "rgba(64, 64, 64, 0.29)"
+      shadow: "rgba(64, 64, 64, 0.29)",
+      border: "#D9D9D9"
     }
   },
   media: {
