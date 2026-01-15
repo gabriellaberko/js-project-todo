@@ -19,7 +19,7 @@ export const TaskOverviewPage = () => {
   return (
     <StyledWrapper>
       <StyledHeader>
-        <StyledLogo src="./logo-white.png" alt="planet logotype"/>
+        <StyledLogo src="./logo.png" alt="planet logotype"/>
         <h1>Planiture</h1>
       </StyledHeader>
       <StyledMain>
@@ -65,7 +65,6 @@ const StyledHeader = styled.header`
   gap: 12px;
   align-items: center;
   justify-content: center;
-  background-color: ${props => props.theme.colors.main.ascent};
-  color: ${props => props.theme.colors.main.title};
-  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.15);
+  color: ${props => props.theme.colors.main.ascent};
+  border-bottom: 1px solid #E2E8F0;
 `;

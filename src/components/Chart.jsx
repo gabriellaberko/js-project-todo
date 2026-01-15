@@ -1,5 +1,5 @@
 import { useTaskStore } from "../stores/taskStore";
-import { PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Cell, Legend } from "recharts";
 
 export const Chart = () => {
 
@@ -16,22 +16,31 @@ export const Chart = () => {
   //turn into an object array to use for pie chart
   const pieChartCategoryData = Object.entries(categoryCount).map(([name, value])=>({ name, value }));
 
-  const sliceColors = ["#45b0ff", "#6699f3", "##837fdf", "#9a64c2", "#a8459f", "#ad2077"];
+  const sliceColors = ["#45B0FF", "#A78BFA", "#9a64c2", "#a8459f", "#ad2077"];
+
+  // const sliceColorsGreyScale = ["#333333", "#575757", "#7e7e7e", "#a7a7a7", "#d2d2d2"];
 
 
   return(
-      <PieChart width={280} height={280}>
+      <PieChart width={280} height={180}>
       <Pie   
         data={pieChartCategoryData}
         dataKey="value"
         nameKey="name"
-        label={({ name, percent }) => `${name} (${(percent * 100).toFixed(0)}%)`} // display category name + percent
-        outerRadius={100}
+        cx="40%"  //make space for legend
+        cy="50%"
+        outerRadius={60}
       >
       {pieChartCategoryData.map((entry, index) => (
         <Cell key={`cell-${index}`} fill={sliceColors[index % sliceColors.length]} />
       ))}
       </Pie>
+        <Legend
+          verticalAlign="middle"
+          align="right"
+          layout="vertical"
+          iconType="circle"
+        />
       </PieChart>
   );
 }

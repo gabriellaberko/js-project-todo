@@ -8,8 +8,8 @@ export const AddTaskBtn = ({ onClick }) => {
 
 const StyledBtn = styled.button`
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 62px;
+  height: 62px;
   background-color: ${props => props.theme.colors.button.activeBg};
   position: relative;
   color: #fff;

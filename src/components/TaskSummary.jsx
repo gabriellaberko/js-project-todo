@@ -11,26 +11,24 @@ export const TaskSummary = () => {
   return(
     <StyledOuterWrapper>
       <h2>Task summary</h2>
-      <StyledStatsWrapper>
+      <StyledInnerWrapper>
+        <StatsWrapper>
+          <StatsRow>
+            <Stat>
+              <StatValue>{incompletedTasks.length}</StatValue>
+              <StatLabel>Tasks to do</StatLabel>
+            </Stat>
+            <Stat>
+              <StatValue>{completedTasks.length} / {tasks.length}</StatValue>
+              <StatLabel>Tasks completed</StatLabel>
+            </Stat>
+          </StatsRow>
+        </StatsWrapper>
         <div>
-          <p>
-            <b>{incompletedTasks.length}</b>
-            <br></br>
-            <br></br>
-            Tasks to complete
-          </p>
+          <ChartTitle>Task category distribution</ChartTitle>
+          <Chart />
         </div>
-        <div>
-          <p>
-            <b>{completedTasks.length} / {tasks.length}</b>
-            <br></br>
-            <br></br>
-            Tasks completed
-          </p>
-        </div>
-      </StyledStatsWrapper>
-      <p><b>Tasks per category</b></p>
-      <Chart />
+      </StyledInnerWrapper>
     </StyledOuterWrapper>
   );
 }
@@ -39,19 +37,65 @@ const StyledOuterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #FFFFFF;
+  border-radius: 16px;
   padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
   margin: 24px 0;
-  gap: 12px;
+  gap: 24px;
 `;
 
-const StyledStatsWrapper = styled.div`
-  display: flex;
+const StyledInnerWrapper = styled.div`
+  display:flex;
+  flex-direction: column;
+  gap: 24px;
+
+  @media ${(props) => props.theme.media.tablet}  {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 80vw;
+  }
+`;
+
+const StatsWrapper = styled.div`
   gap: 32px;
   text-align: center;
 `;
 
-const StyledSingleStatWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+const Stat = styled.div`
+  text-align: center;
 `;
+
+const StatValue = styled.div`
+  font-size: 28px;
+  font-weight: 600;
+  color: #1E293B;
+`;
+
+const StatLabel = styled.div`
+  font-size: 13px;
+  color: #64748B;
+`;
+
+const StatsRow = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+
+  @media ${(props) => props.theme.media.tablet}  {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+  }
+`;
+
+const ChartTitle = styled.p`
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: center;
+`;
+
