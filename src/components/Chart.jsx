@@ -16,13 +16,10 @@ export const Chart = () => {
   //turn into an object array to use for pie chart
   const pieChartCategoryData = Object.entries(categoryCount).map(([name, value])=>({ name, value }));
 
-  const sliceColors = ["#52C5FF", "#A78BFA", "#9a64c2", "#a8459f", "#ad2077"];
-
-  // const sliceColorsGreyScale = ["#333333", "#575757", "#7e7e7e", "#a7a7a7", "#d2d2d2"];
-
+  const sliceColors = ["#14B8A6","#45B0FF", "#2563EB", "#4F46E5", "#A78BFA", "#9a64c2", "#a8459f", "#ad2077", "#7C3AED"];
 
   return(
-      <PieChart width={280} height={180}>
+      <PieChart width={290} height={180}>
       <Pie   
         data={pieChartCategoryData}
         dataKey="value"

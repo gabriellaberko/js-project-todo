@@ -14,13 +14,16 @@ export const Task = ({ task }) => {
   return(
     <StyledDiv>
       <StyledOuterWrapper>
-           <RemoveTaskBtn onClick={() => removeTask(task.id)} />
+        <StyledTaskHeader>
+          {task.category && <TaskCategory>{task.category}</TaskCategory>}
+          <RemoveTaskBtn onClick={() => removeTask(task.id)} />
+        </StyledTaskHeader>
         <StyledInnerWrapper>
           <div>
             <h3>{task.name}</h3>
             {task.description && <p>{task.description}</p>}
             {task.deadline && task.completed === false && <TaskDeadline deadline={task.deadline}>{task.deadline}</TaskDeadline>}
-            {task.category && <TaskCategory>{task.category}</TaskCategory>}
+            {/* {task.category && <TaskCategory>{task.category}</TaskCategory>} */}
           </div>
           <TaskStatusBtn onClick={() => updateCompletionStatus(task.id, task.completed)} completed={task.completed}/>
         </StyledInnerWrapper>
@@ -44,15 +47,19 @@ const StyledOuterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-bottom: 12px;
 `;
 
 const StyledInnerWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 24px;
+  margin: 12px 0;
 `;
 
-const StyledParagraph = styled.p`
-  color: ${props => props.$IsOverDue ? "red" : "grey"};
+const StyledTaskHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 `;

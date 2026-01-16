@@ -9,8 +9,8 @@ export const TaskStatusBtn = ({ onClick, completed }) => {
 
 const StyledBtn = styled.button`
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 42px;
+  height: 42px;
   background-color: ${props => (props.completed 
     ? props => props.theme.colors.button.activeBg
     : props => props.theme.colors.button.bg
@@ -36,9 +36,9 @@ const StyledBtn = styled.button`
   &::after {
     content: '';
     position: absolute;
-    top: 48%;
+    top: 46%;
     left: 50%;
-    width: 8px;
+    width: 6px;
     height: 14px;
     border: solid white;
     border-width: 0 4px 4px 0;

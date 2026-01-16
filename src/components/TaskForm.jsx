@@ -39,6 +39,11 @@ export const TaskForm = ({ ref }) => {
         <StyledSelect name="category" id="category" required>
           <option>Work</option>
           <option>Personal</option>
+          <option>Shopping</option>
+          <option>Finance</option>
+          <option>Home</option>
+          <option>Social</option>
+          <option>Health & Fitness</option>
         </StyledSelect>
         <label for="due-date">Deadline:</label>
         <StyledDateInput type="date" id="due-date" name="deadline" />

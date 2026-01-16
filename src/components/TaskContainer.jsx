@@ -13,7 +13,7 @@ export const TaskContainer = ({ openForm }) => {
   return(
     <StyledDiv>
       {(!tasks || tasks.length < 1) && <EmptyTasksMessage />}
-      {tasks && incompletedTasks.length > 0 && <h2>To-do</h2>}
+      {tasks && incompletedTasks.length > 0 && <h2>To-do list</h2>}
       {tasks && tasks.length > 0 && incompletedTasks.length < 1 && <EmptyIncompleteTasksMessage />}
       {tasks && incompletedTasks.map(task => (<Task key={task.id} task={task} />))}
       {tasks && tasks.length > 0 && <AddTaskBtn onClick={openForm}/>}
