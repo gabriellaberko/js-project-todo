@@ -16,7 +16,7 @@ export const TaskSummary = () => {
           <StatsRow>
             <Stat>
               <StatValue>{incompletedTasks.length}</StatValue>
-              <StatLabel>Tasks to do</StatLabel>
+              <StatLabel>Tasks remaining</StatLabel>
             </Stat>
             <Stat>
               <StatValue>{completedTasks.length} / {tasks.length}</StatValue>
@@ -24,10 +24,10 @@ export const TaskSummary = () => {
             </Stat>
           </StatsRow>
         </StatsWrapper>
-        <div>
+        <ChartWrapper>
           <ChartTitle>Task category distribution</ChartTitle>
           <Chart />
-        </div>
+        </ChartWrapper>
       </StyledInnerWrapper>
     </StyledOuterWrapper>
   );
@@ -40,9 +40,9 @@ const StyledOuterWrapper = styled.div`
   background: #FFFFFF;
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
   margin: 24px 0;
-  gap: 24px;
+  gap: 8px;
 `;
 
 const StyledInnerWrapper = styled.div`
@@ -54,8 +54,10 @@ const StyledInnerWrapper = styled.div`
 const StatsWrapper = styled.div`
   gap: 32px;
   text-align: center;
+  padding: 24px;
+  box-shadow: 1px 2px 3px 2px rgba(0, 0, 0, 0.03);
+  border-radius: 7px;
 `;
-
 
 const Stat = styled.div`
   text-align: center;
@@ -76,7 +78,12 @@ const StatsRow = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
-  margin-bottom: 24px;
+`;
+
+const ChartWrapper = styled.div`
+  padding: 12px;
+  box-shadow: 1px 2px 3px 2px rgba(0, 0, 0, 0.03);
+  border-radius: 7px;
 `;
 
 const ChartTitle = styled.p`

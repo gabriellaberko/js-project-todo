@@ -8,14 +8,14 @@ export const AddTaskBtn = ({ onClick }) => {
 
 const StyledBtn = styled.button`
   border-radius: 50%;
-  width: 62px;
-  height: 62px;
+  width: 52px;
+  height: 52px;
   background-color: ${props => props.theme.colors.button.activeBg};
   position: relative;
   color: #fff;
   border: none;
   margin-top: 24px;
-  margin-bottom: 12px;
+  margin-bottom: 32px;
 
    &:hover {
     background-color: ${props => props.theme.colors.button.activeHoverBg};
@@ -31,7 +31,7 @@ const StyledBtn = styled.button`
 
   /* horizontal bar */
   &::before {
-    width: 30px;  /* length of the plus */
+    width: 25px;  /* length of the plus */
     height: 4px;  /* thickness */
     top: 50%;
     left: 50%;
@@ -41,7 +41,7 @@ const StyledBtn = styled.button`
   /* vertical bar */
   &::after {
     width: 4px;   /* thickness */
-    height: 30px; /* length of the plus */
+    height: 25px; /* length of the plus */
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

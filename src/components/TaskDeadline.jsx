@@ -14,5 +14,5 @@ export const TaskDeadline = ({ deadline, children }) => {
 }
 
 const StyledParagraph = styled.p`
-  color: ${props => props.$isOverDue ? "red" : "grey"};
+  color: ${props => props.$isOverDue ? "#cb2121" : props => props.theme.colors.main.secondaryText};
 `;

@@ -43,7 +43,7 @@ export const TaskForm = ({ ref }) => {
           <option>Finance</option>
           <option>Home</option>
           <option>Social</option>
-          <option>Health & Fitness</option>
+          <option>Other</option>
         </StyledSelect>
         <label for="due-date">Deadline:</label>
         <StyledDateInput type="date" id="due-date" name="deadline" />

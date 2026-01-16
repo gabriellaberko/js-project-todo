@@ -17,29 +17,39 @@ export const TaskOverviewPage = () => {
   }
 
   return (
-    <StyledWrapper>
-      <StyledHeader>
-        <StyledLogo src="./logo.png" alt="planet logotype"/>
-        <h1>Planiture</h1>
-      </StyledHeader>
-      <StyledMain>
-        {(tasks && tasks.length > 0) && <TaskSummary />}
-        <TaskContainer openForm={openForm} />
-        <TaskForm ref={dialogRef} />
-      </StyledMain>
-      {(!tasks || tasks.length < 1) &&
-        <StyledFooter>
-          <AddTaskBtn onClick={openForm}/>
-        </StyledFooter>
-      }
-    </StyledWrapper>
+    <StyledOuterWrapper>
+      <StyledWrapper>
+        <StyledHeader>
+          <StyledLogo src="./logo.png" alt="planet logotype"/>
+          <h1>Planiture</h1>
+        </StyledHeader>
+        <StyledMain>
+          {(tasks && tasks.length > 0) && <TaskSummary />}
+          <TaskContainer openForm={openForm} />
+          <TaskForm ref={dialogRef} />
+        </StyledMain>
+        {(!tasks || tasks.length < 1) &&
+          <StyledFooter>
+            <AddTaskBtn onClick={openForm}/>
+          </StyledFooter>
+        }
+      </StyledWrapper>
+    </StyledOuterWrapper>
   )
 }
+
+const StyledOuterWrapper = styled.div`
+  @media ${props => props.theme.media.tablet}  {
+    display: flex;
+    justify-content: center;
+  }
+`;
 
 const StyledWrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  max-width: 700px;
 `;
 
 const StyledMain = styled.main`

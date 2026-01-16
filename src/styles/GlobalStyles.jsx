@@ -2,13 +2,19 @@ import { createGlobalStyle } from "styled-components"
 
 export const GlobalStyle = createGlobalStyle`
 
-  :root {
-    font-family: ${(props) => props.theme.font.font};
-    background: ${(props) => props.theme.colors.main.bg};
-    color: ${(props) => props.theme.colors.main.primaryText};
+  *, *::before, *::after {
     box-sizing: border-box;
-    margin: 0;
-    margin-bottom: 12px;
   }
-  
+
+  html, body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: ${({ theme }) => theme.font.font};
+    background: ${({ theme }) => theme.colors.main.bg};
+    color: ${({ theme }) => theme.colors.main.primaryText};
+  }
+
 `;

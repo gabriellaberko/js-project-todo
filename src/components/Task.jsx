@@ -23,7 +23,6 @@ export const Task = ({ task }) => {
             <h3>{task.name}</h3>
             {task.description && <p>{task.description}</p>}
             {task.deadline && task.completed === false && <TaskDeadline deadline={task.deadline}>{task.deadline}</TaskDeadline>}
-            {/* {task.category && <TaskCategory>{task.category}</TaskCategory>} */}
           </div>
           <TaskStatusBtn onClick={() => updateCompletionStatus(task.id, task.completed)} completed={task.completed}/>
         </StyledInnerWrapper>
@@ -35,7 +34,7 @@ export const Task = ({ task }) => {
 const StyledDiv = styled.div`
   width: 100%;
   padding: 12px 24px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
   display: flex;
   justify-content: space-between;
   align-items: center;
