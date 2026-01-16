@@ -28,7 +28,6 @@ const StyledBtn = styled.button`
       ? props => props.theme.colors.button.activeHoverBg
       : props => props.theme.colors.button.hoverBg
     )};
-    /* box-shadow: 0px 3px 3px ${props => props.theme.colors.button.hoverBg}; */
     cursor: pointer;
    }
 

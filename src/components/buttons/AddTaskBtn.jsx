@@ -26,22 +26,22 @@ const StyledBtn = styled.button`
   &::before, &::after {
     content: '';
     position: absolute;
-    background-color: #fff; /* white bars */
+    background-color: #fff; 
   }
 
-  /* horizontal bar */
+  // horizontal bar
   &::before {
-    width: 25px;  /* length of the plus */
-    height: 4px;  /* thickness */
+    width: 25px;  
+    height: 4px; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
 
-  /* vertical bar */
+  // vertical bar 
   &::after {
-    width: 4px;   /* thickness */
-    height: 25px; /* length of the plus */
+    width: 4px;   
+    height: 25px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
